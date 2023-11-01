@@ -7,7 +7,7 @@ def get_connection():
     return conn
 
 # Streamlit 앱 시작
-st.title("SQLite와 Streamlit 연동 예제")
+st.title("회원가입과 로그인을 해보세요!")
 # 초기에 회원가입 폼만 표시
 st.header("회원가입")
 signup_id = st.text_input("사용자 이름:", key="signup_id")
