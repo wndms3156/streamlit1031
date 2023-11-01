@@ -27,13 +27,13 @@ if signup_button:
     cursor = conn.cursor()
 
     # 가입 버튼을 클릭한 경우 아이디 중복 확인
-    cursor.execute("SELECT id FROM users WHERE id = ?", (signup_id,))
+    cursor.execute("SELECT id FROM user WHERE id = ?", (signup_id,))
     existing_user = cursor.fetchone()
     if existing_user:
         message.text("이미 존재하는 아이디입니다. 다른 아이디를 사용해주세요.")
     else:
         # 가입 로직을 처리하고 데이터베이스에 추가
-        cursor.execute("INSERT INTO users (id, pw) VALUES (?, ?)", (signup_id, str(signup_pw)))
+        cursor.execute("INSERT INTO user (id, pw) VALUES (?, ?)", (signup_id, str(signup_pw)))
         conn.commit()  # 변경사항을 저장
         conn.close()  # 데이터베이스 연결 닫기
         message.text("회원가입이 완료되었습니다.")
@@ -43,7 +43,7 @@ if login_button:
     cursor = conn.cursor()
 
     # 로그인 버튼을 클릭한 경우 로그인 로직을 추가
-    cursor.execute("SELECT id, pw FROM users WHERE id = ? AND pw = ?", (login_id, login_pw))
+    cursor.execute("SELECT id, pw FROM user WHERE id = ? AND pw = ?", (login_id, login_pw))
     user = cursor.fetchone()
     conn.close()  # 데이터베이스 연결 닫기
 
@@ -58,7 +58,7 @@ if login_button:
 st.subheader("사용자 목록:")
 conn = get_connection()  # 데이터베이스 연결 열기
 cursor = conn.cursor()
-cursor.execute("SELECT id, pw FROM users")
+cursor.execute("SELECT id, pw FROM user")
 data = cursor.fetchall()
 conn.close()  # 데이터베이스 연결 닫기
 

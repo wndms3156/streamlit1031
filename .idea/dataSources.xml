@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="login.db" uuid="cd7992d3-8a8f-47a2-9727-555918be3a54">
+    <data-source source="LOCAL" name="login.db" uuid="672cf2e6-cee8-4cde-a0b3-45187e9044e5">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/../../../../Program Files/DB Browser for SQLite/login.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\JUEUN\PycharmProjects\streamlit1031\login.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
